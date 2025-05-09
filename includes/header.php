@@ -10,26 +10,15 @@
           <div class="header_info">
          <?php
          $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-foreach ($results as $result) {
-$email=$result->EmailId;
-$contactno=$result->ContactNo;
+          $query = $dbh -> prepare($sql);
+        $query->execute();
+        $results=$query->fetchAll(PDO::FETCH_OBJ);
+      foreach ($results as $result) {
+    $email=$result->EmailId;
+    $contactno=$result->ContactNo;
 }
 ?>   
 
-            <div class="header_widgets">
-              <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
-              <p class="uppercase_text">For Support Mail us : </p>
-              <a href="mailto:<?php echo htmlentities($email);?>"><?php echo htmlentities($email);?></a> </div>
-            <div class="header_widgets">
-              <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
-              <p class="uppercase_text">Service Helpline Call Us: </p>
-              <a href="tel:<?php echo htmlentities($contactno);?>"><?php echo htmlentities($contactno);?></a> </div>
-            <div class="social-follow">
-            
-            </div>
    <?php   if(strlen($_SESSION['login'])==0)
 	{	
 ?>
@@ -102,7 +91,5 @@ foreach($results as $result)
         </ul>
       </div>
     </div>
-  </nav>
-  <!-- Navigation end --> 
-  
+  </nav>  
 </header>
